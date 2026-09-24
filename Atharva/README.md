@@ -1,29 +1,73 @@
-# Pharmacy Management API
+# 💊 Pharmacy & Healthcare Store API
 
-This is the solution for Assignment 09: Pharmacy & Healthcare Store API with RBAC & JWT.
+A RESTful **Pharmacy Management & Medicine Ordering API** built using **Node.js, Express.js, MongoDB Atlas, Mongoose, JWT, bcryptjs, and dotenv**.
 
-## Setup Instructions
+## 🚀 Live Deployment
 
-1. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
+[**https://assignment-9-pharmacy-management-api-lxpm.onrender.com**](https://assignment-9-pharmacy-management-api-lxpm.onrender.com)
 
-2. **Environment Variables:**
-   Copy `.env.example` to `.env` and configure your `MONGO_URI` (either a local instance or MongoDB Atlas) and `JWT_SECRET`.
-   ```bash
-   cp .env.example .env
-   ```
+## 🛠️ Tech Stack
 
-3. **Start the Application:**
-   ```bash
-   npm run dev
-   ```
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+* JWT Authentication
+* bcryptjs
+* dotenv
+* CORS
 
-## Roles and Access
-- **Customer**: Can browse medicines and place orders.
-- **Pharmacist**: Can manage inventory (add, update), view expiring medicines, and approve orders (which deducts stock).
-- **Admin**: Can do everything a Pharmacist can, plus delete medicines from the catalog.
+## ✨ Features
 
-## Registering Staff
-Use the `/api/auth/register-staff` endpoint with the correct `secretKey` (default is `supersecret` from `.env.example`) to create Pharmacist and Admin users.
+* Customer registration and login
+* JWT-based authentication
+* Role-Based Access Control (RBAC)
+* Customer, Pharmacist, and Admin roles
+* Medicine inventory management
+* Medicine search and category filtering
+* Expiring medicine tracking
+* Customer medicine ordering
+* Order status management
+* Automatic stock deduction after approval
+* Secure password hashing
+
+## 👥 User Roles
+
+| Role       | Main Permissions                    |
+| ---------- | ----------------------------------- |
+| Customer   | Browse medicines and place orders   |
+| Pharmacist | Manage medicines and process orders |
+| Admin      | Full medicine and order management  |
+
+## 📌 Main API Routes
+
+| Method | Endpoint                  | Description             |
+| ------ | ------------------------- | ----------------------- |
+| POST   | `/api/auth/register`      | Register customer       |
+| POST   | `/api/auth/login`         | Login and receive JWT   |
+| GET    | `/api/auth/profile`       | Get user profile        |
+| GET    | `/api/medicines`          | View medicines          |
+| GET    | `/api/medicines/expiring` | View expiring medicines |
+| POST   | `/api/medicines`          | Add medicine            |
+| PUT    | `/api/medicines/:id`      | Update medicine         |
+| DELETE | `/api/medicines/:id`      | Delete medicine         |
+| POST   | `/api/orders`             | Place an order          |
+| GET    | `/api/orders/my-orders`   | View order history      |
+| GET    | `/api/orders`             | View all orders         |
+| PATCH  | `/api/orders/:id/status`  | Update order status     |
+
+## 🗄️ Database
+
+The API uses **MongoDB Atlas with Mongoose**.
+
+Main models:
+
+* `User`
+* `Medicine`
+* `Order`
+
+## 👨‍💻 Assignment
+
+**Assignment 09 – Pharmacy & Healthcare Store API**
+
+Backend Development Assignment.
